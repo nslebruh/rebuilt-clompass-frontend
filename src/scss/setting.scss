@@ -1,0 +1,19 @@
+.settingContainer {
+    display: grid;
+    grid-template-columns: 13% 75% 8%;
+    column-gap: 2%;
+    background-color: rgb(30, 30, 30);
+    border-bottom: solid 0.125rem rgb(45, 45, 45);
+    border-radius: 1rem;
+    .name {
+        font-size: larger;
+    }
+    .description {
+        width: 100%
+    }
+    .input, .name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

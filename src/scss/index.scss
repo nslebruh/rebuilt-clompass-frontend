@@ -1,0 +1,113 @@
+@import "../../node_modules/bootstrap/scss/functions";
+
+$nav-link-color: rgba(white, .60);
+$nav-link-hover-color: rgba(white, .80); 
+
+$light-grey: rgb(75, 75, 75);
+$less-light-grey: rgb(60, 60, 60);
+$dark-grey: rgb(45, 45, 45);
+$darker-grey: rgb(30, 30, 30);
+$light-black: rgb(15, 15, 15);
+$black: rgb(0, 0, 0);
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/utilities";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/forms";
+
+@import ".././fonts/fontAwesome+custom/new/style.scss";
+
+.min-vw-100 {
+  min-width: 100vw;
+}
+
+.mx-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.min-vh-100 {
+  min-height: 100vh
+}
+
+.color-black {
+  color: black
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+} 
+
+
+html,body{
+  margin: 0;
+  height:100%;
+};
+
+body {
+  overflow: hidden;
+  display: flex;
+  background-color: black;
+  color: white;
+};
+
+*,::before,::after {
+  box-sizing: border-box
+} 
+
+a {
+  text-decoration: none
+} 
+#root>div {
+  display: flex;
+  flex-direction: row;
+}
+
+.test-transition-enter {
+  opacity: 0;
+}
+.test-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+  
+}
+.test-transition-exit {
+  opacity: 1;
+}
+.test-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.outletContainer {
+  margin: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}

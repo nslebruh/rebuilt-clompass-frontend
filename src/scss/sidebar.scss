@@ -1,0 +1,112 @@
+.sidebar-container {
+  font-size: 16px;
+  background-color: rgb(30, 30, 30) !important;
+  height: 100vh;
+  padding-right: 0;
+  padding-left: 0;
+  flex: 0 0;
+  transition: ease 0.3s;
+  .sidebar {
+    flex-wrap: nowrap;
+    height: 100%;
+    left: 0;
+    width: 3rem;
+    padding: 0.75rem;
+    transition: inherit;
+    .nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      height: inherit;
+      .nav-logo, .nav-link {
+        font-weight: 500;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        column-gap: 1rem;
+        padding: 1rem 0 1rem 0;
+      }
+      .nav-logo {
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+      }
+      .nav-logo-icon {
+        font-size: 1.5rem;
+      }
+      .nav-logo-name {
+        opacity: 1 !important;
+        height:max-content;
+        color: white;
+        font-weight: 700;
+      }
+      .nav-link {
+        position: relative;
+        color: var(--bs-nav-link-color);
+      }
+      span.nav-link {
+        cursor:pointer
+      }
+      .nav-link:hover {
+        color: var(--bs-nav-link-hover-color);
+      }
+      .nav-link.active:hover {
+        color: var(--bs-navbar-active-color)
+      }
+      .nav-icon {
+        font-size: 1.25rem;
+        padding: 0.125rem
+      }
+      .curriculum-container {
+        .collapse-list {
+          padding: 0rem 2rem 0rem 1.75rem;
+        }
+        .collapse-background {
+          border-left: rgb(61, 60, 60) solid 1px;
+          margin: 0 0.75rem;
+        }
+        .nav-link {
+          padding: 1rem 0rem;
+          cursor: pointer;
+        }
+        .collapse-link {
+          font-weight: 400;
+          padding: 0.5rem 0rem 0.5rem 0rem; 
+        }
+      }
+      #curriculum {
+        margin-bottom: 0rem;
+      }
+      .icon-pencil.active {
+        transform: rotate(45deg);
+      }
+      .active {
+        color: var(--bs-navbar-active-color)
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .sidebar {
+      width: 12rem;
+    }
+    .sidebar.collapsed {
+      width: 3rem
+    }
+  }
+}
+.sidebar-modal {
+  background-color: rgb(15, 15, 15) !important;
+  .btn-close {
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  }
+}
+.modal-content {
+  border: none
+}
+.sidebar.collapsed {
+  width: 3rem; 
+}
+.sidebar.active {
+  width: 12rem;
+}

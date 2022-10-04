@@ -1,0 +1,72 @@
+.headerContainer {
+  height: 8rem;
+  width: inherit;
+  .header {
+    display: flex;
+    justify-content: center;
+    
+    
+    .icon {
+      padding: 1rem 0rem 1rem 0rem;
+      font-size: 4rem;
+      margin: 1rem;
+    }
+    .name {
+      font-size: 4rem;
+      margin: 1rem;
+    }
+  }
+}
+
+.loginFormContainer {
+  margin: 0 30vw;
+  .loginForm {
+    color: black;
+    background-color: rgb(40, 40, 40);
+    display: flex;
+    width: 40vw;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    .formElement {
+      margin: 1.25vw 5vw 1.25vw 5vw;
+    }
+    button.formElement {
+      padding: 0.5rem 1rem;
+    }
+    .form-check {
+      label {
+        color: white;
+      }
+    }
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 2.5vw 25vw;
+  justify-content: center;
+  .error {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+    border-radius: 10px;
+    height: 15vh;
+    .errorTitle {
+      font-size: x-large;
+    }
+    .errorMessage {
+      font-size: large;
+      text-align: center;
+      .errorStatus {
+        padding-right: 1rem;
+
+      }
+    }
+    
+  }
+}
