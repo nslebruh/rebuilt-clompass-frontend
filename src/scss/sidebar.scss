@@ -110,3 +110,9 @@
 .sidebar.active {
   width: 12rem;
 }
+#dashboardLink.active {
+  color: initial;
+}
+#dashboardLink.active.dashboard {
+  color: var(--bs-navbar-active-color)
+}

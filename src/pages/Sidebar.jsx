@@ -29,8 +29,10 @@ export const Sidebar = () => {
   }
 
   useEffect(() => {
-    if (location.pathname !== "/") {
-      document.getElementById("dashboardLink").classList.remove("active")
+    if (location.pathname === "/") {
+      document.getElementById("dashboardLink").classList.add("dashboard")
+    } else {
+      document.getElementById("dashboardLink").classList.remove("dashboard")
     }
   }, [location.pathname])
 
