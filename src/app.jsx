@@ -14,6 +14,7 @@ import { Communications } from "./pages/Communications"
 import { Subjects } from "./pages/Subjects"
 import { Subject } from "./pages/Subject"
 import { Profile } from "./pages/Profile"
+import { incNavigationIndex, addHistory, getNavigationIndex, resetIndex } from "./context/data"
 import "./scss/index.scss"
 
 const Layout = () => {
@@ -66,11 +67,16 @@ const routes = [
         loader: async ({request}) => {
             console.log(request.url)
             let url = new URL(request.url)
-            if (url.pathname === "/login") return
+            if (url.pathname === "/login") {
+                resetIndex()
+                return
+            } 
+            if (getNavigationIndex() !== 0) return
             let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/checkAuth`, {
                 credentials: "include"
             })
             if (res.status !== 200) return redirect("/login")
+            incNavigationIndex()
             //if (res.status !== 200) throw new Response(res.statusText, {status: res.status})
 
         },

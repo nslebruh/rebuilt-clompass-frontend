@@ -12,6 +12,18 @@ const objectToArray = (obj) => {
 
 }
 
+export const historyStore = create((set) => ({
+    history: [],
+    navigationIndex: 0,
+}))
+
+export const incNavigationIndex = () => set((state) => ({navigationIndex: state.navigationIndex + 1}))
+
+export const getNavigationIndex = () => historyStore.getState().navigationIndex
+
+export const resetIndex = () => historyStore.setState({navigationIndex: 0})
+
+
 export const useEventStore = create((set) => ({
     events: {},
 }))
