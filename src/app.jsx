@@ -67,6 +67,7 @@ const routes = [
         loader: async ({request}) => {
             console.log(request.url)
             let url = new URL(request.url)
+            console.log(getNavigationIndex())
             if (url.pathname === "/login") {
                 resetIndex()
                 return
