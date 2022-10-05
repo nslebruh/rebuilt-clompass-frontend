@@ -111,7 +111,7 @@
   width: 12rem;
 }
 #dashboardLink.active {
-  color: initial;
+  color: var(--bs-nav-link-color);
 }
 #dashboardLink.active.dashboard {
   color: var(--bs-navbar-active-color)
