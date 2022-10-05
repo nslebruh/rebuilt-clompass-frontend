@@ -67,17 +67,11 @@ const routes = [
         loader: async ({request}) => {
             console.log(request.url)
             let url = new URL(request.url)
-            console.log(getNavigationIndex())
-            if (url.pathname === "/login") {
-                resetIndex()
-                return
-            } 
-            if (getNavigationIndex() !== 0) return
+            if (url.pathname === "/login") return
             let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/checkAuth`, {
                 credentials: "include"
             })
             if (res.status !== 200) return redirect("/login")
-            incNavigationIndex()
             //if (res.status !== 200) throw new Response(res.statusText, {status: res.status})
 
         },
@@ -99,11 +93,14 @@ const routes = [
                     {
                         index: true,
                         element: <Dashboard />,
-                        //loader: async () => {
-                        //    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/get/dashboard`, {
-                        //        credentials: "include"
-                        //    })
-                        //} 
+                        loader: async () => {
+                            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/get/dashboard`, {
+                                credentials: "include"
+                            })
+                            if (res.status !== 200) redirect("/login")
+                            return res
+                            
+                        } 
                     },
                     {
                         path: "schedule",
