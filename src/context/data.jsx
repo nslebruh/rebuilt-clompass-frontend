@@ -17,7 +17,7 @@ export const historyStore = create((set) => ({
     navigationIndex: 0,
 }))
 
-export const incNavigationIndex = () => historyStore.setState({navigationIndex: state.navigationIndex + 1})
+export const incNavigationIndex = () => historyStore.setState((state) => ({navigationIndex: state.navigationIndex + 1}))
 
 export const getNavigationIndex = () => historyStore.getState().navigationIndex
 
