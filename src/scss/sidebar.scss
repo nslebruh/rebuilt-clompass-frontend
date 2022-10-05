@@ -113,6 +113,12 @@
 #dashboardLink.active {
   color: var(--bs-nav-link-color);
 }
+#dashboardLink.active:hover {
+  color: var(--bs-nav-link-hover-color);
+}
 #dashboardLink.active.dashboard {
   color: var(--bs-navbar-active-color)
+}
+#dashboardLink.active.dashboard:hover {
+  color: var(--bs-nav-link-active-color);
 }
