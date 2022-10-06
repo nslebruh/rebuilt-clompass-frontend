@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import { CSSTransition, SwitchTransition } from "react-transition-group"
-import { useLocation, useOutlet, createBrowserRouter, RouterProvider, redirect } from "react-router-dom"
+import { useLocation, useOutlet, createBrowserRouter, RouterProvider, redirect, json } from "react-router-dom"
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query"
 import { Dashboard } from "./pages/Dashboard"
 import { Sidebar } from "./pages/Sidebar"
@@ -14,7 +14,6 @@ import { Communications } from "./pages/Communications"
 import { Subjects } from "./pages/Subjects"
 import { Subject } from "./pages/Subject"
 import { Profile } from "./pages/Profile"
-import { incNavigationIndex, addHistory, getNavigationIndex, resetIndex } from "./context/data"
 import "./scss/index.scss"
 
 const Layout = () => {
@@ -97,10 +96,12 @@ const routes = [
                             const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/get/dashboard`, {
                                 credentials: "include"
                             })
-                            if (res.status !== 200) redirect("/login")
+                            if (res.status === 401) redirect("/login")
+                            if (res.status !== 200) throw res
                             return res
                             
-                        } 
+                        } ,
+                        errorElement: <ErrorModal />
                     },
                     {
                         path: "schedule",
