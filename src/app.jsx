@@ -14,6 +14,7 @@ import { Communications } from "./pages/Communications"
 import { Subjects } from "./pages/Subjects"
 import { Subject } from "./pages/Subject"
 import { Profile } from "./pages/Profile"
+import { ErrorModal } from "./components/ErrorModal"
 import "./scss/index.scss"
 
 const Layout = () => {
