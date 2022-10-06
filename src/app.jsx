@@ -29,7 +29,7 @@ const Layout = () => {
                 <SwitchTransition>
                     <CSSTransition
                         key={location.pathname}
-                        timeout={300}
+                        timeout={50}
                         classNames="test-transition"
                     >   
                         <div className="outletContainer">
